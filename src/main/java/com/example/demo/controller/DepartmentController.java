@@ -2,18 +2,18 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Department;
 import com.example.demo.service.DepartmentService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/department")
 @RestController
 public class DepartmentController {
 
+    @Autowired
     private DepartmentService departmentService;
 
     @PostMapping("/add")
-    public Department add(Department department){
+    public Department add(@RequestBody Department department){
         departmentService.add(department);
         return department;
     }

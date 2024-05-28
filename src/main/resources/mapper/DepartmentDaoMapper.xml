@@ -4,8 +4,9 @@
 <mapper namespace="com.example.demo.dao.DepartmentDaoMapper">
 
     <insert id="add" useGeneratedKeys="true" keyProperty="id">
-        insert into department(department_name, department_address,department_code)
-        values(#{departmentName},#{departmentAddress},#{departmentCode})
+        insert into
+        department(department_name, department_addr,department_code)
+        values(#{departmentName},#{departmentAddr},#{departmentCode})
     </insert>
 
 </mapper>
