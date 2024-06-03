@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class Department {
     private Integer id;
-    private String departmentName;
-    private String departmentAddr;
-    private String departmentCode;
+    private String department_name;
+    private String department_addr;
+    private String department_code;
 
 }

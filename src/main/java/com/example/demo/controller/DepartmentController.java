@@ -17,4 +17,18 @@ public class DepartmentController {
         departmentService.add(department);
         return department;
     }
+    @PutMapping("/updata/{id}")
+    public Department updata(@PathVariable Integer id,@RequestBody Department department){
+        departmentService.updata(id,department);
+        return departmentService.updata(id,department);
+    }
+
+    @GetMapping("/get/{id}")
+    public Department findById(@PathVariable Integer id){
+        return departmentService.findById(id);
+    }
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Integer id){
+        departmentService.delete(id);
+    }
 }

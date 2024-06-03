@@ -18,4 +18,22 @@ public class DepartmentServiceImpl implements DepartmentService {
         departmentDaoMapper.add(department);
         return department;
     }
+
+    @Override
+    public Department updata(Integer id, Department department) {
+        department.setId(id);
+        departmentDaoMapper.updata(department);
+        return department;
+    }
+
+    @Override
+    public Department findById(Integer id) {
+        return departmentDaoMapper.findById(id);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        departmentDaoMapper.delete(id);
+        System.out.println("删除成功");
+    }
 }

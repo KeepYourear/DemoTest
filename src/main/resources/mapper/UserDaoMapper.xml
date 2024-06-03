@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDaoMapper">
+
+    <insert id="register" useGeneratedKeys="true" keyProperty="id">
+        insert into
+            user(id, phone, password, nickname)
+        values(#{id}, #{phone}, #{password}, #{nickname})
+    </insert>
+
+    <select id="login" resultType="com.example.demo.entity.User">
+        select * from user where phone = #{phone} and password = #{password}
+    </select>
+
+
+
+
+
+</mapper>
+
+

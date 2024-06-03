@@ -9,4 +9,28 @@
         values(#{departmentName},#{departmentAddr},#{departmentCode})
     </insert>
 
+    <update id="updata">
+        update department
+        <set>
+            <if test="departmentName != null">
+                department_name = #{departmentName},
+            </if>
+            <if test="departmentAddr != null">
+                department_addr = #{departmentAddr},
+            </if>
+            <if test="departmentCode != null">
+                department_code = #{departmentCode},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="findById" resultType="com.example.demo.entity.Department">
+        select * from department where id = #{id}
+    </select>
+
+    <delete id="delete">
+        delete from department where id = #{id}
+    </delete>
+
 </mapper>
