@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import com.example.demo.entity.ApiResponse;
 import com.example.demo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,5 +9,7 @@ public interface UserDaoMapper {
     // 注册
     void register(User user);
     // 登录
-    User login(User loginUser);
+    ApiResponse findUser(User user);
+
+    User getUserByPhone(String phone);
 }
